@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proxeat-15ec1": {
+      "hosting": {
+        "proxeatV1": [
+          "proxeat-15ec1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proxeat-15ec1"
+  }
+}
