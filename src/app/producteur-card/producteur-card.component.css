@@ -1,0 +1,30 @@
+.card{
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 2.5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 98%;
+  margin-bottom: 5vw;
+}
+.photo{
+  width: 100%;
+}
+.name{
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  background-color: black;
+  color: white;
+  font-size: 4vw;
+}
+.insideName{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 5vw;
+}
+.button{
+  position: relative;
+  float: right;
+}

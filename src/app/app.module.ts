@@ -21,6 +21,10 @@ import { CommandeComponent } from './commande/commande.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { ReglementComponent } from './reglement/reglement.component';
 import { RamassageComponent } from './ramassage/ramassage.component';
+import { ProducteurListComponent } from './producteur-list/producteur-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -38,14 +42,18 @@ import { RamassageComponent } from './ramassage/ramassage.component';
     CommandeComponent,
     HistoriqueComponent,
     ReglementComponent,
-    RamassageComponent
+    RamassageComponent,
+    ProducteurListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

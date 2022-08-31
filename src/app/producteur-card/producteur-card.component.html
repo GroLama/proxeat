@@ -1,1 +1,8 @@
-<p>producteur-card works!</p>
+<div class="card">
+  <div class="name"><p class="insideName">{{producteur?.name}}</p></div>
+  <div ><img class="photo" src="{{producteur?.photoDevanture}}" alt=""></div>
+  <div class="loc"><p>Actuellement à : {{producteur?.localisationClear}}</p></div>
+  <div class="horaire"><p>Horaire: {{producteur?.horaires}}</p></div>
+  <div class="description">{{producteur?.description}}</div>
+  <div class="button"><button>Voir Produit</button></div>
+</div>

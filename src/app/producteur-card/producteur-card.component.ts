@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProducteurInterface } from '../interfaces/ProducteurInterface';
 
 @Component({
   selector: 'app-producteur-card',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProducteurCardComponent implements OnInit {
 
+  @Input() producteur?:ProducteurInterface;
   constructor() { }
 
   ngOnInit(): void {
