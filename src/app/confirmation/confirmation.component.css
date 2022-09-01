@@ -1,0 +1,109 @@
+.deliveryimg  {
+    width: 180px;
+    height: 135PX;
+    padding-top: 50px;
+    margin-left: 100px;
+    text-align: center;
+}
+div{
+    background-color: rgb(78,159,61);
+    color: white;
+}
+
+h1 {
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 1px;
+    width: 300px;
+    margin: 30px;
+    font-weight : bold ;
+}
+h2 {
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 145px;
+    width: 300px;
+    font-weight : bold ;
+}
+h3 {
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 150px;
+    width: 300px;
+    font-weight : bold ;
+
+}
+h4 {
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 110px;
+    width: 300px;
+    font-weight : bold ;
+
+}
+.bddnom
+{
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 110px;
+    width: 300px;
+
+}
+
+.bddloca
+{
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 130px;
+    width: 300px;
+
+}
+
+.bddcate
+{
+    display: inline-block;
+    background-color: rgb(78, 159, 51);
+    color: #eeeeee;
+    margin-left: 150px;
+    width: 300px;
+
+}
+button {
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    padding: 2px;
+    width: 280px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 45px;
+    font-weight : bold ;
+  
+  }
+  .imagebutton {
+
+    width : 20px;
+    height : 20px;
+  }
+  button:hover {
+    background-color: gray;
+  }
+
+  p {
+    padding-left:2px
+  }
