@@ -28,3 +28,22 @@
   position: relative;
   float: right;
 }
+.btnSection {
+  margin-bottom: 1vw;
+  grid-area: 6 / 1 / 7 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnSection1 {
+  display: block;
+  width: 200px;
+  height: 30px;
+  background: #4E9F3D;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e2e2e2;
+  border-radius: 5px;
+}
