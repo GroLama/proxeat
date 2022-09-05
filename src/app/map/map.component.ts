@@ -5,30 +5,40 @@ import { Loader } from '@googlemaps/js-api-loader';
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
+
 })
 export class MapComponent implements OnInit {
 
     title = 'google-maps';
-  
+
+
     ngOnInit(): void {
       let loader = new Loader({
         apiKey: 'AIzaSyBFL91Di8FJ492DTBBqRqRxZPzkeaLvPEg'
+
       })
-  
+
       loader.load().then(() => {
         console.log('loaded maps')
-  
-        const location = { lat: 43.231970, lng: 0.075235 }
-  
-        new google.maps.Map(document.getElementById("map") as HTMLElement, {
-          center: {lat:43.231970,lng:0.075235},
-          zoom: 13,
+
+        var location = { lat: 43.231970, lng: 0.075235 }
+
+        let myMap = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+          center: {lat:43.231990,lng:0.075235},
+          zoom: 12,
           // styles: proxeat-map
         })
-  
-        const marker = new google.maps.Marker({
-          position: location,
+
+        var marker = new google.maps.Marker({
+          position : new google.maps.LatLng(location),
+          icon: {
+            url: './assets/custom_pin.svg',
+            anchor: new google.maps.Point(35,35),
+            scaledSize: new google.maps.Size(50, 50)
+          },
+          map : myMap
         });
+
       })
     }
   }

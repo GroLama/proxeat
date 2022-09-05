@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faArrowLeftLong, faGear } from '@fortawesome/free-solid-svg-icons';
+import { RouterServiceService } from '../router-service.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +11,14 @@ import { faArrowLeftLong, faGear } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   faGear = faGear;
   faArrowLeft = faArrowLeftLong;
-  constructor() { }
+  previous:string ='';
+
+  constructor(private RouterService:RouterServiceService, private router:Router) { }
 
   ngOnInit(): void {
+    this.previous = this.RouterService.getPreviousUrl();
   }
-
+  public onReturn():void{
+    this.router.navigate(['/'+this.previous])
+  }
 }

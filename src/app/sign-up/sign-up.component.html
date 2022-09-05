@@ -1,2 +1,26 @@
-<p>sign-up works!</p>
-<div (click)="navigateToLogin()">Already have an account ?</div>
+<app-header></app-header>
+<body>
+  <br><br>
+
+<div class="cercleicon"> <fa-icon [icon]="faCircle"></fa-icon><fa-icon [icon]="faCircle"></fa-icon><fa-icon [icon]="faCircle"></fa-icon><p class="cercleicon"> Sign Up</p><fa-icon [icon]="faCircle"></fa-icon><fa-icon [icon]="faCircle"></fa-icon><fa-icon [icon]="faCircle"></fa-icon>
+</div>   <br><br><br><br>
+<div class="center"></div>
+<form method="post">
+  <div class="txt_field">
+    <input type="text" required>
+    <span></span>
+    <label>Email</label>
+  </div>
+  <br>
+  <div class="txt_field">
+    <input type="password" required>
+    <span></span>
+    <label>Password</label>
+  </div>
+  <input type="submit" value="Sign Up">
+
+  <div class ="signupbtn"(click)="navigateToLogin()">Already have an account ?</div>
+</form>
+
+
+</body>
