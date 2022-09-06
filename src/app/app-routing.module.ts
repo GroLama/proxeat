@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { DetailMenuComponent } from './detail-menu/detail-menu.component';
+import { HistoriqueComponent } from './historique/historique.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path:'confirmation',component:ConfirmationComponent},
   {path:'profil',component:ProfilComponent},
   {path:'map',component:MapComponent},
+  {path:'historique',component:HistoriqueComponent},
+  {path:'menu',component:DetailMenuComponent},
   
 ];
 

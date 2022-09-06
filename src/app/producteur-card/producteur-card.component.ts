@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProducteurInterface } from '../interfaces/ProducteurInterface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producteur-card',
@@ -9,9 +10,11 @@ import { ProducteurInterface } from '../interfaces/ProducteurInterface';
 export class ProducteurCardComponent implements OnInit {
 
   @Input() producteur?:ProducteurInterface;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  navigateToMenu(){
+    this.router.navigate(['/menu'])
+  }
 }
