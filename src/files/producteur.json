@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "description": "Le meilleur boulanger de la région",
+    "horaires": "De 9:00 à 18:00. Fermé Mardi",
+    "name": "Garry",
+    "photoDevanture": "https://upload.wikimedia.org/wikipedia/commons/1/16/Devanture_Boulangerie_159_rue_Ordener.jpg"
+  },
+  {
+    "id": 2,
+    "description": "Le meilleur boucher de la région",
+    "horaires": "De 9:00 à 18:00. Fermé Mardi",
+    "name": "Remi",
+    "photoDevanture": "https://i.pinimg.com/originals/e8/ef/db/e8efdb427b57c933c0d4058c7b4ad04d.jpg"
+  },
+  {
+    "id": 3,
+    "description": "La boucherie du centre",
+    "horaires": "De 9:00 à 18:00. Fermé Mardi",
+    "name": "Samuel",
+    "photoDevanture": "https://veauxbretanin.fr/wp-content/uploads/2019/02/IMG_20190204_102130-1024x575.jpg"
+  },
+  {
+    "id": 4,
+    "description": "Le laitier",
+    "horaires": "De 9:00 à 18:00. Fermé Mardi",
+    "name": "Gerard",
+    "photoDevanture": "https://img.freepik.com/vecteurs-premium/laiterie-laiterie-enseigne-auvent-facade-magasin-devanture-magasin-fermier_169241-3518.jpg?w=2000"
+  },
+  {
+    "id": 5,
+    "description": "Mhhhh le fromage",
+    "horaires": "De 9:00 à 18:00. Fermé Mardi",
+    "name": "Joseph",
+    "photoDevanture": "https://nakide.fr/wp-content/uploads/2020/10/agencement-architecture-interieur-Fromagerie-Spielhofer-devanture.jpg"
+  }
+]

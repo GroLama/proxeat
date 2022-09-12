@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class LoginComponent implements OnInit {
   faCircle = faCircle;
-  constructor() { }
+  constructor(public authService:AuthService) { }
 
   ngOnInit(): void {
   }

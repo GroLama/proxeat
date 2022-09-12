@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -8,7 +9,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class SignUpComponent implements OnInit {
   faCircle = faCircle;
-  constructor(private router:Router) { }
+  constructor(private router:Router,public authService:AuthService) { }
 
   ngOnInit(): void {
   }

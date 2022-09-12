@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DbServiceService } from '../db-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,11 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private dbService:DbServiceService) { }
 
   ngOnInit(): void {
   }
   navigateToSignUp(){
     this.router.navigate(['/signup']);
+  }
+  dbServiceTest(){
+    this.dbService.sendDataProducteur('producteur','producteur');
   }
 }

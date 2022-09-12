@@ -7,17 +7,17 @@
 <div class="center"></div>
 <form method="post">
   <div class="txt_field">
-    <input type="text" required>
+    <input type="email" #email required>
     <span></span>
     <label>Email</label>
   </div>
   <br>
   <div class="txt_field">
-    <input type="password" required>
+    <input type="password" #password required>
     <span></span>
     <label>Password</label>
   </div>
-  <input type="submit" value="Sign Up">
+  <input type="button" value="Sign Up" (click)="authService.SignUp(email.value, password.value)">
 
   <div class ="signupbtn"(click)="navigateToLogin()">Already have an account ?</div>
 </form>
