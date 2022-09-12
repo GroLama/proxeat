@@ -33,7 +33,7 @@ body {
 .profile-top {
   height: 250px;
   width: 500px;
-  /* background-image: url("src/assets/city.jpg"); */
+  background-image: url("src/assets/couvertureprofil.png");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -43,7 +43,7 @@ body {
   /* background-image: url("src/assets/愛.png"); */
   background-position: center;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
   width: 150px;
   height: 150px;
   overflow: hidden;
@@ -53,6 +53,8 @@ body {
   bottom: 0;
   left: 38%;
   transform: translate(-50%, 50%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-bottom {
@@ -73,7 +75,8 @@ body {
 
 .name {
   font-weight: 700;
-  margin-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .email {
