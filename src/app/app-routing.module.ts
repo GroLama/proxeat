@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { ProducteurListComponent } from './producteur-list/producteur-list.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ReglementComponent } from './reglement/reglement.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path:'map',component:MapComponent},
   {path:'historique',component:HistoriqueComponent},
   {path:'menu',component:DetailMenuComponent},
+  {path:'reglement',component:ReglementComponent},
+  
   
 ];
 

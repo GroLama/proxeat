@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { render } from 'creditcardpayments/creditCardPayments';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-reglement',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReglementComponent implements OnInit {
 
-  constructor() { }
+  faTrash = faTrash;
+  constructor() { 
+    render(
+      {
+          id: "#payments",
+          currency: "EUR",
+          value: "100.00",
+          onApprove: (details) => {
+            alert("Transaction is succes");
+          }
+        }
+      );
+  }
 
   ngOnInit(): void {
   }
