@@ -15,15 +15,15 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'signup',component:SignUpComponent},
   {path:'login',component:LoginComponent},
-  {path:'producteur',component:ProducteurListComponent},
+  {path:'producteur',component:ProducteurListComponent,data:{title:"Producteurs"}},
   {path:'confirmation',component:ConfirmationComponent},
-  {path:'profil',component:ProfilComponent},
-  {path:'map',component:MapComponent},
-  {path:'historique',component:HistoriqueComponent},
-  {path:'menu',component:DetailMenuComponent},
+  {path:'profil',component:ProfilComponent,data:{title:"Profil"}},
+  {path:'map',component:MapComponent,data:{title:"Map"}},
+  {path:'historique',component:HistoriqueComponent,data:{title:"Historique"}},
+  {path:'menu',component:DetailMenuComponent,data:{title:"Produits"}},
   {path:'reglement',component:ReglementComponent},
-  
-  
+
+
 ];
 
 @NgModule({
