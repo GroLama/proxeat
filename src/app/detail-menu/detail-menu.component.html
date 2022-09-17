@@ -1,48 +1,15 @@
 <div><app-header></app-header></div>
 
-<img class="boulangerie" src=".\assets\boulanger.png">
+<img class="boulangerie" [src]="urlImg">
 
 <h1>Nos produits locaux :</h1>
 <div>
-<div class="card">
+<div class="card" *ngFor="let products of (productsList$|async)">
   <fa-icon [icon]="faCartPlus"></fa-icon>
-    <div class="name"><p>Nom : Baguette</p></div>
-    <div><p>Prix : 1€</p></div>
-
+    <div class="name"><p>Nom : {{products.produit}}</p></div>
+    <div><p>Description : {{products.description}}</p></div>
+    <div><p>Prix : {{products.price}}€</p></div>
 </div>
 <hr>
-<div>
-  <div class="card">
-    <fa-icon [icon]="faCartPlus"></fa-icon>
-    <div class="name"><p>Nom : Croissant</p></div>
-    <div><p>Prix : 0,80€</p></div>
-</div>
-  <hr>
-<div>
-  <div class="card">
-    <fa-icon [icon]="faCartPlus"></fa-icon>
-    <div class="name"><p>Nom : Pain au chocolat</p></div>
-    <div><p>Prix : 0,80€</p></div>
-</div>
-    <hr> 
-
-<div>
-  <div class="card">
-    <fa-icon [icon]="faCartPlus"></fa-icon>
-    <div class="name"><p>Nom : Mille-Feuille</p></div>
-    <div><p>Prix : 1,40€</p></div>
-
-</div>
-    <hr>
-<div>
-  </div>
-  <div class="card">
-    <fa-icon [icon]="faCartPlus"></fa-icon>
-    <div class="name"><p>Nom : Pain au Raisin</p></div>
-    <div><p>Prix : 0,90€</p></div>
-</div>
-    <hr>
-
-  </div>
 </div>
 <input class="faCartPlus" type="submit" value="Valider">

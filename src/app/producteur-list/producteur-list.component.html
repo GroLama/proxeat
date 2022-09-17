@@ -1,7 +1,9 @@
 <app-header></app-header>
-<div *ngFor="let producteur of producteurList">
+<div *ngFor="let producteur of (producteurList$|async)">
   <app-producteur-card
   [producteur]="producteur"></app-producteur-card>
 </div>
+
 <hr><hr><hr><hr><hr>
+
 <app-footer></app-footer>

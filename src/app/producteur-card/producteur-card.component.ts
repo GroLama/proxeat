@@ -14,7 +14,5 @@ export class ProducteurCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  navigateToMenu(){
-    this.router.navigate(['/menu'])
-  }
+
 }

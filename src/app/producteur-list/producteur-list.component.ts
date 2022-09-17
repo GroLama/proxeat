@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DbServiceService } from '../db-service.service';
+import { ProducteurInterface } from '../interfaces/ProducteurInterface';
 
 @Component({
   selector: 'app-producteur-list',
@@ -6,33 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./producteur-list.component.css'],
 })
 export class ProducteurListComponent implements OnInit {
-  producteurList = [
-    {
-      description: 'Le meilleur boulanger',
-      name: 'Garry',
-      photoDevanture:
-        'https://upload.wikimedia.org/wikipedia/commons/1/16/Devanture_Boulangerie_159_rue_Ordener.jpg',
-      horaires: '9:00-18:00. Fermé mardi',
-      localisationClear: '4 Rue du Moulin, Tarbes',
-    },
-    {
-      description: 'Le meilleur boulanger',
-      name: 'Roger',
-      photoDevanture:
-        'https://upload.wikimedia.org/wikipedia/commons/1/16/Devanture_Boulangerie_159_rue_Ordener.jpg',
-      horaires: '9:00-18:00. Fermé mardi',
-      localisationClear: '4 Rue du Moulin, Tarbes',
-    },
-    {
-      description: 'Le meilleur boulanger',
-      name: 'Sam',
-      photoDevanture:
-        'https://upload.wikimedia.org/wikipedia/commons/1/16/Devanture_Boulangerie_159_rue_Ordener.jpg',
-      horaires: '9:00-18:00. Fermé mardi',
-      localisationClear: '4 Rue du Moulin, Tarbes',
-    },
-  ];
-  constructor() {}
+  producteurList$:Observable<ProducteurInterface[]> = new Observable();
+displayData() {
+  this.dbService.displayProd()
+}
+  
+  constructor(private dbService:DbServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dbService.startFetch()
+    this.producteurList$ = this.dbService.producteurEvent
+    this.producteurList$.subscribe(data=>{
+
+    })
+  }
 }

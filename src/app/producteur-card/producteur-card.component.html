@@ -4,5 +4,5 @@
   <div class="loc"><p>Actuellement à : {{producteur?.localisationClear}}</p></div>
   <div class="horaire"><p>Horaire: {{producteur?.horaires}}</p></div>
   <div class="description">{{producteur?.description}}</div>
-  <div class="btnSection"><button class="btnSection1" (click)="navigateToMenu()">Voir Produit</button></div>
+  <div class="btnSection"><button class="btnSection1" [routerLink]="['/menu',{id:producteur!.id,url:producteur!.photoDevanture}]">Voir Produit</button></div>
 </div>

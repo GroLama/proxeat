@@ -15,7 +15,4 @@ export class HomeComponent implements OnInit {
   navigateToSignUp(){
     this.router.navigate(['/signup']);
   }
-  dbServiceTest(){
-    this.dbService.sendDataProducteur('producteur','producteur');
-  }
 }
