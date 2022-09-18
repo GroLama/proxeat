@@ -5,11 +5,14 @@
 <h1>Nos produits locaux :</h1>
 <div>
 <div class="card" *ngFor="let products of (productsList$|async)">
-  <fa-icon [icon]="faCartPlus"></fa-icon>
+  <fa-icon [icon]="faCartPlus" (click)="addProduct(products.produit,products.price)"></fa-icon>
     <div class="name"><p>Nom : {{products.produit}}</p></div>
     <div><p>Description : {{products.description}}</p></div>
     <div><p>Prix : {{products.price}}€</p></div>
 </div>
 <hr>
 </div>
-<input class="faCartPlus" type="submit" value="Valider">
+<input class="faCartPlus" type="submit" value="Valider" (click)="navigateToReglement()">
+<div class="card" *ngFor="let resumeItem of productAdd">
+  <div class="name" *ngIf="resumeItem.item!=''"><p>Nom : {{resumeItem.item}} Quantité : {{resumeItem.quantity}}</p></div>
+</div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { DetailMenuComponent } from './detail-menu/detail-menu.component';
+import { EditProfilComponent } from './edit-profil/edit-profil.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'historique',component:HistoriqueComponent,data:{title:"Historique"}},
   {path:'menu',component:DetailMenuComponent,data:{title:"Produits"}},
   {path:'reglement',component:ReglementComponent},
+  {path:'modifProfil',component:EditProfilComponent},
 
 
 ];
