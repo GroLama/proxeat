@@ -1,19 +1,58 @@
 <app-header></app-header>
 <div class="centre">
-    <div class=" profile tabShow ">
-        <h1> Votre Profil </h1>
-        <h2> Nom Complet </h2>
-        <input type="text" class="input" value="Toto">
+  <div class="profile tabShow">
+    <h1>Votre Profil</h1>
+    <h2>Nom Complet</h2>
+    <input
+      type="text"
+      class="input"
+      [placeholder]="
+        userData.displayName != undefined
+          ? userData.displayName
+          : 'Choisissez un nom'
+      "
+      #username
+    />
 
-        <h2> Email </h2>
-        <input type=" text " class=" input " value=" example@example.com ">
+    <h2>Email</h2>
+    <input
+      type=" text "
+      class="input"
+      [placeholder]="
+        userData.email != undefined
+          ? userData.email
+          : 'choisissez un email'
+      "
+      #email
+    />
 
-        <h2> Password </h2>
-        <input type=" password " class=" input " value=" Mot de passe ">
+    <h2>Password</h2>
+    <input
+      type=" password "
+      class="input"
+      [placeholder]="
+        'Choisissez un nouveau mot de passe'
+      "
+      #password
+    />
 
-        <h2> Telephone </h2>
-        <input type=" number " class=" input " value=" 0635180675 ">
+    <h2>Telephone</h2>
+    <input
+      type=" number "
+      class="input"
+      [placeholder]="
+        userData.phone != undefined
+          ? userData.phone
+          : 'Ajoutez un numéro de téléphone'
+      "
+      #tel
+    />
 
-        <button class=" btn "> Modifier </button>
-    </div>
+    <button
+      class="btn"
+      (click)="sendData(username.value, email.value, password.value, tel.value)"
+    >
+      Modifier
+    </button>
+  </div>
 </div>

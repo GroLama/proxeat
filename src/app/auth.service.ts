@@ -117,6 +117,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      phone:undefined
     };
     return userRef.set(userData, {
       merge: true,
