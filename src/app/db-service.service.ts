@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { AngularFirestore, DocumentSnapshot, DocumentSnapshotExists } from "@angular/fire/compat/firestore";
 import { ProducteurInterface } from './interfaces/ProducteurInterface';
+import { User } from './interfaces/user';
 import { Products } from './products';
 @Injectable({
   providedIn: 'root'
@@ -57,7 +58,16 @@ export class DbServiceService {
 //   populateDb(id:string,value:any){
 //     this.db.collection("producteurs").doc(id).set(value)
 //   }
+userData:User ={
+  uid: "",
+ email: "",
+ displayName: "",
+ photoURL: "",
+ emailVerified:false,
+ phone:""
+};
   public producteurList:ProducteurInterface[]=[];
+
   public productsList:Products[]=[];
   productsListEvent = new EventEmitter<Products[]>();
   producteurEvent = new EventEmitter<ProducteurInterface[]>();
@@ -90,10 +100,36 @@ export class DbServiceService {
     })
 
   }
-  setUserInfo(uid:string){
+  setUserInfo(uid:string,username:string,email:string,password:string,phone:string){
+    let userInfo = this.db.collection('users').doc(uid);
+    if(username!=undefined){
+  userInfo.update({
+    displayName:username
+  })
+    }
+    if(email!=undefined){
+      userInfo.update({
+        email:email
+      })
+    }
+    if(password!=undefined){
+      userInfo.update({
+        password:password
+      })
+    }
+    if(phone!=undefined){
+      userInfo.update({
+        phone:phone
+      })
+    }
+  }
+  getUserUID():string{
+    let user = JSON.parse(localStorage.getItem('user')!);
+    return user.uid
 
   }
-  getUserInfo(){
+  getUserInfo(uid:string){
+    return this.db.collection('users').doc(uid).get();
 
   }
   async getProductList(id:number){
