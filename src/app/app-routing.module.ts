@@ -22,9 +22,8 @@ const routes: Routes = [
   {path:'map',component:MapComponent,data:{title:"Map"}},
   {path:'historique',component:HistoriqueComponent,data:{title:"Historique"}},
   {path:'menu',component:DetailMenuComponent,data:{title:"Produits"}},
-  {path:'reglement',component:ReglementComponent},
-  {path:'modifProfil',component:EditProfilComponent},
-
+  {path:'reglement',component:ReglementComponent,data:{title:"Reglement"}},
+  {path:'modifProfil',component:EditProfilComponent,data:{title:"Modifier Profil"}}
 
 ];
 

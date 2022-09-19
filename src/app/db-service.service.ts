@@ -102,22 +102,22 @@ userData:User ={
   }
   setUserInfo(uid:string,username:string,email:string,password:string,phone:string){
     let userInfo = this.db.collection('users').doc(uid);
-    if(username!=undefined){
+    if(username!=undefined && username!=""){
   userInfo.update({
     displayName:username
   })
     }
-    if(email!=undefined){
+    if(email!=undefined && email !=""){
       userInfo.update({
         email:email
       })
     }
-    if(password!=undefined){
+    if(password!=undefined && password!=""){
       userInfo.update({
         password:password
       })
     }
-    if(phone!=undefined){
+    if(phone!=undefined && phone!=""){
       userInfo.update({
         phone:phone
       })
