@@ -17,13 +17,14 @@ export class DetailMenuComponent implements OnInit {
   productsList$:Observable<Products[]> = new Observable();
   productAdd=[{item:'',price:0,quantity:0}];
   firstAdd=false;
-  constructor(private route:ActivatedRoute,private dbService:DbServiceService) { }
+  constructor(private route:ActivatedRoute,private dbService:DbServiceService,private router:Router) { }
 
   ngOnInit(): void {
 
    let tempId =  this.route.snapshot.paramMap.get('id');
    if(tempId != null){
     this.id = parseInt(tempId)
+    this.dbService.storeProducteurId(this.id.toString())
    }
    let tempUrl = this.route.snapshot.paramMap.get('url');
    if(tempUrl!=null){
@@ -46,8 +47,11 @@ export class DetailMenuComponent implements OnInit {
       }
       this.productAdd.push({item:produit,price:prix,quantity:1});
     }
-    console.log(this.productAdd);
+
 
   }
-  navigateToReglement(){}
+  navigateToReglement(){
+    this.dbService.storeProducts(this.productAdd)
+    this.router.navigate(['/reglement'])
+  }
 }

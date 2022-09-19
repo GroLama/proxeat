@@ -1,47 +1,18 @@
 <app-header></app-header>
 <h1>Votre Commande :</h1>
-<div>
-<div class="card">
-  <fa-icon [icon]="faTrash"></fa-icon>
-    <div class="name"><p>Nom : Baguette</p></div>
-    <div><p>Prix : 1€</p></div>
+<div *ngFor="let history of productHistory;let index = index">
+<div class="card" *ngIf="history.quantity>0">
+  <fa-icon [icon]="faTrash" (click)="decreaseQuantity(index)"></fa-icon>
+    <div class="name"><p>Nom :{{history!.item | uppercase}}</p></div>
+    <div><p>Prix : {{history!.price}} </p></div>
+    <div><p>Quantité : {{history!.quantity}} </p></div>
 
 </div>
 <hr>
-<div>
-  <div class="card">
-    <fa-icon [icon]="faTrash"></fa-icon>
-    <div class="name"><p>Nom : Croissant</p></div>
-    <div><p>Prix : 0,80€</p></div>
 </div>
-  <hr>
-<div>
-  <div class="card">
-    <fa-icon [icon]="faTrash"></fa-icon>
-    <div class="name"><p>Nom : Pain au chocolat</p></div>
-    <div><p>Prix : 0,80€</p></div>
+<hr>
+<div class="total">
+  <p>Total : {{total}} €</p>
 </div>
-    <hr> 
-
-<div>
-  <div class="card">
-    <fa-icon [icon]="faTrash"></fa-icon>
-    <div class="name"><p>Nom : Mille-Feuille</p></div>
-    <div><p>Prix : 1,40€</p></div>
-
-</div>
-    <hr>
-<div>
-  </div>
-  <div class="card">
-    <fa-icon [icon]="faTrash"></fa-icon>
-    <div class="name"><p>Nom : Pain au Raisin</p></div>
-    <div><p>Prix : 0,90€</p></div>
-</div>
-    <hr>
-
-  </div>
-</div>
-
 <div class="payment" id="payments"></div>
-<input type="submit" value="Valider">
+<input type="submit" value="Valider" (click)="callStoreHistory()">

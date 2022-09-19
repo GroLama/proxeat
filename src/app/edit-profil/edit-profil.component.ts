@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { DbServiceService } from '../db-service.service';
 import { User } from '../interfaces/user';
 
@@ -17,14 +18,14 @@ export class EditProfilComponent implements OnInit {
    emailVerified:false,
    phone:""
   };
-  constructor(private dbService:DbServiceService) { }
+  constructor(private dbService:DbServiceService,private authService:AuthService) { }
 
   ngOnInit(): void {
     this.uid = this.dbService.getUserUID();
     let userInfo = this.dbService.getUserInfo(this.uid)
     userInfo.forEach(item=>{
       this.userData = item.data() as User;
-      console.log(this.userData);
+
 
     })
 
@@ -34,5 +35,9 @@ export class EditProfilComponent implements OnInit {
     console.log("dede");
 
     this.dbService.setUserInfo(this.uid,username,email,password,phone);
+  }
+  signOut(){
+    this.authService.SignOut();
+
   }
 }

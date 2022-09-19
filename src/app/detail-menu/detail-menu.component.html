@@ -12,7 +12,9 @@
 </div>
 <hr>
 </div>
-<input class="faCartPlus" type="submit" value="Valider" (click)="navigateToReglement()">
+
+<h2>Votre panier :</h2>
 <div class="card" *ngFor="let resumeItem of productAdd">
-  <div class="name" *ngIf="resumeItem.item!=''"><p>Nom : {{resumeItem.item}} Quantité : {{resumeItem.quantity}}</p></div>
+  <div class="name2" *ngIf="resumeItem.item!=''"><p>{{resumeItem.quantity}} {{resumeItem.item}} Prix : {{resumeItem.price*resumeItem.quantity}} €</p><hr></div>
 </div>
+<input class="faCartPlus" type="submit" value="Valider" (click)="navigateToReglement()">

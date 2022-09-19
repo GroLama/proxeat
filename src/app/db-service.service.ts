@@ -3,6 +3,7 @@ import { AngularFirestore, DocumentSnapshot, DocumentSnapshotExists } from "@ang
 import { ProducteurInterface } from './interfaces/ProducteurInterface';
 import { User } from './interfaces/user';
 import { Products } from './products';
+import { History } from './interfaces/history';
 @Injectable({
   providedIn: 'root'
 })
@@ -66,16 +67,19 @@ userData:User ={
  emailVerified:false,
  phone:""
 };
+productsHistory:[]=[];
   public producteurList:ProducteurInterface[]=[];
-
+  public producteurID:string='';
   public productsList:Products[]=[];
   productsListEvent = new EventEmitter<Products[]>();
   producteurEvent = new EventEmitter<ProducteurInterface[]>();
+  producteurInfoEvent = new EventEmitter<ProducteurInterface>();
 
   async startFetch(){
     this.getProducteur()
   }
   async getProducteur(){
+    this.clearProducts()
     this.clearList()
     let fireStoreQuery;
     let producteurId;
@@ -98,6 +102,18 @@ userData:User ={
 
 
     })
+
+  }
+  getProducteurInfo(){
+    let value;
+    console.log(this.producteurID);
+
+    let producteurInfo = this.db.collection('producteurs').doc(this.producteurID).get()
+    let tempValue = producteurInfo.forEach(data=>{
+      value=  data.data() as ProducteurInterface;
+      this.producteurInfoEvent.emit(value)
+    })
+
 
   }
   setUserInfo(uid:string,username:string,email:string,password:string,phone:string){
@@ -133,6 +149,7 @@ userData:User ={
 
   }
   async getProductList(id:number){
+    this.clearProducts()
     this.clearList()
     let products;
     let firestoreQuery = this.db.collection('producteurs').doc(id.toString()).collection('produits').get();
@@ -141,18 +158,48 @@ userData:User ={
         products = data.data() as Products;
         this.productsList.push(products);
         this.productsListEvent.emit(this.productsList);
-        console.log(this.productsList);
+
 
       })
     })
 
   }
   displayProd(){
-    console.log(this.producteurList);
+
 
   }
   clearList(){
     this.productsList =[]
     this.producteurList = []
   }
+  storeProducts(products:any){
+    this.productsHistory= products
+
+  }
+  getProductsHistory(){
+    return this.productsHistory
+  }
+  clearProducts(){
+    this.productsHistory = [];
+  }
+  storeProductHistory(uid:string,history:History[]){
+
+    let tempQuery = this.db.collection('users').doc(uid).collection('history').doc();
+    history.forEach(item=>{
+      tempQuery.collection('inside').doc().set({
+        'item':item.item,
+        'price':item.price,
+        'quantity':item.quantity
+      })
+    })
+
+}
+storeProducteurId(uid:string){
+  this.producteurID = uid;
+  console.log(this.producteurID);
+
+}
+clearProducteurID(){
+  this.producteurID = '';
+}
 }
