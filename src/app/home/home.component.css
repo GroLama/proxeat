@@ -21,7 +21,6 @@ button:hover {
 }
 
 .imagebutton {
-
   width : 25px;
   height : 25px;
 }
@@ -37,4 +36,19 @@ div {
 }
 p{
  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+  
+.text {
+  flex: 8;
+}
+  
+.image-inline {
+  height: 1.5em; /* Ajuster la taille de l'image en utilisant une valeur appropriée */
+  width: auto; /* Laisser la largeur automatique pour maintenir le rapport d'aspect */
+  margin-left: 5px; /* Ajuster la marge gauche selon notre préférence */
 }

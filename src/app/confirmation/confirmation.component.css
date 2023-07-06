@@ -1,83 +1,59 @@
-.deliveryimg  {
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+@media (max-width: 450px) and (max-height: 700px) { /* Ajuster la taille d'écran appropriée pour les appareils mobiles */
+    button {
+      background-color: rgb(78, 159, 61);
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(78, 159, 61);
+    height: 100%;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.deliveryimg {
+    display: block;
+    margin: 0 auto;
     width: 180px;
-    height: 135PX;
+    height: 135px;
     padding-top: 50px;
-    margin-left: 100px;
     text-align: center;
 }
-div{
-    background-color: rgb(78,159,61);
+
+h1, h2, h3, h4, .bddnom, .bddloca, .bddcate {
+    background-color: rgb(78, 159, 51);
+    display: inline-block;
     color: white;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 5px;
+    width: 300px;
 }
 
 h1 {
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    text-align: center;
     font-size: 28px;
-    padding: 1px;
-    width: 300px;
-    margin: 30px;
-    font-weight : bold ;
-}
-h2 {
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 145px;
-    width: 300px;
-    font-weight : bold ;
-}
-h3 {
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 150px;
-    width: 300px;
-    font-weight : bold ;
-
-}
-h4 {
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 110px;
-    width: 300px;
-    font-weight : bold ;
-
-}
-.bddnom
-{
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 110px;
-    width: 300px;
-
+    margin: 30px auto;
 }
 
-.bddloca
-{
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 130px;
-    width: 300px;
-
-}
-
-.bddcate
-{
-    display: inline-block;
-    background-color: rgb(78, 159, 51);
-    color: #eeeeee;
-    margin-left: 150px;
-    width: 300px;
-
-}
 button {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
     border: 4px double #cccccc;
@@ -91,19 +67,21 @@ button {
     -o-transition: all 0.5s;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 45px;
-    font-weight : bold ;
-  
-  }
-  .imagebutton {
+    margin: 45px auto 0;
+    font-weight: bold;
+}
 
-    width : 20px;
-    height : 20px;
-  }
-  button:hover {
+.imagebutton {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+button:hover {
     background-color: gray;
-  }
+}
 
-  p {
-    padding-left:2px
-  }
+p {
+    padding-left: 2px;
+    margin: 0;
+}

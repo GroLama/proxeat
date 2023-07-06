@@ -6,54 +6,49 @@
     <input
       type="text"
       class="input"
-      [placeholder]="
-        userData.displayName != undefined
-          ? userData.displayName
-          : 'Choisissez un nom'
-      "
+      [placeholder]="userData.displayName !== undefined ? userData.displayName : 'Entrez votre nom'"
       #username
     />
 
     <h2>Email</h2>
     <input
-      type=" text "
+      type="text"
       class="input"
-      [placeholder]="
-        userData.email != undefined
-          ? userData.email
-          : 'choisissez un email'
-      "
+      [placeholder]="userData.email !== undefined ? userData.email : 'Choisissez un email'"
       #email
     />
 
     <h2>Password</h2>
     <input
-      type=" password "
+      type="password"
       class="input"
-      [placeholder]="
-        'Choisissez un nouveau mot de passe'
-      "
+      placeholder="Nouveau mot de passe"
       #password
     />
 
-    <h2>Telephone</h2>
-    <input
-      type=" number "
-      class="input"
-      [placeholder]="
-        userData.phone != undefined
-          ? userData.phone
-          : 'Ajoutez un numéro de téléphone'
-      "
-      #tel
-    />
+    <h2>Téléphone</h2>
+    <div class="phone-input">
+      <select class="country-code" #countryCode>
+        <option value="+32">+32 (Belgique)</option>
+        <option value="+33">+33 (France)</option>
+        <option value="+34">+34 (Espagne)</option>
+        <option value="+39">+39 (Italie)</option>
+        <option value="+41">+41 (Suisse)</option>
+        <option value="+49">+49 (Allemagne)</option>
+      </select>
+      <input
+        type="tel"
+        class="input"
+        [placeholder]="userData.phone !== undefined ? userData.phone : 'Ajoutez un numéro de téléphone'"
+        #phoneNumber
+      />
+    </div>
 
-    <button
-      class="btn"
-      (click)="sendData(username.value, email.value, password.value, tel.value)"
-    >
-      Modifier
-    </button>
-    <button class="btn" (click)="signOut()">Deconnexion</button>
+    <div class="btn-container">
+      <button class="btn btn-align-right" (click)="sendData(username.value, email.value, password.value, countryCode.value + phoneNumber.value)">
+        Modifier
+      </button>
+      <button class="btn" (click)="signOut()">Déconnexion</button>
+    </div>
   </div>
 </div>

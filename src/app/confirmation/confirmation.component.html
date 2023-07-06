@@ -1,15 +1,20 @@
-<div><img class="deliveryimg" src=".\assets\deliveryimg.png">
-
-    <h1>Commande réussie</h1>
-    <p>Merci d'avoir commandé à partir de l'application Prox'Eat !
-        Votre commande sera disponible à l'endroit suivant.</p>
-
-    <h2 class="categoriecommande">Producteur :</h2>
-    <p class="bddnom">{{name}}</p>
-    <h3 class="categoriecommande">Localisation :</h3>
-    <p class="bddloca">Localisation en BDD</p>
-    <h4 class="categoriecommande">Heure de prise en charge :</h4>
-    <p class="bddcate">  {{heure}}</p>
-
-    <button><img class="imagebutton" src=".\assets\boutton terminer img.png">Terminer</button>
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="container">
+        <img class="deliveryimg" src="./assets/deliveryimg.png">
+        <h1>Commande réussie</h1>
+        <p style="font-size: 20px;">Merci d'avoir commandé à partir de l'application Prox'Eat ! Votre commande sera disponible à l'endroit suivant :</p>
+        <h2 class="categoriecommande"style="font-size: 22px;">Producteur :</h2>
+        <p class="bddnom"style="font-size: 18px;">{{name}}</p>
+        <h3 class="categoriecommande"style="font-size: 22px;">Localisation :</h3>
+        <p class="bddloca"style="font-size: 18px;">Localisation en BDD</p>
+        <h4 class="categoriecommande"style="font-size: 22px;">Heure de prise en charge :</h4>
+        <p class="bddcate"style="font-size: 18px;">{{heure}}</p>
+        <button>
+        <img class="imagebutton" src="./assets/Resto.png">
+        <span>Terminer</span>
+        </button>
     </div>
+</body>
+</html>
