@@ -1,14 +1,19 @@
 <div class="card">
-  <div class="name" [ngClass]="{'mobile-layout': isMobileLayout}">
-    <p class="insideName">{{producteur?.name}}</p>
+  <div class="name"><p class="insideName">{{producteur?.name}}
+
+  </p><span class="like-count">{{ producteurLikesCount }}</span>
     <button class="btn-like" (click)="toggleLike()">
-      <i class="fas fa-heart heart-icon" [ngClass]="{'liked': liked}"></i>
+      <img class="like" [src]="liked ? 'assets/liked.png' : 'assets/like.png'" alt="Like">
     </button>
-    <p>{{ producteurLikesCount }} likes.</p>
   </div>
-  <div><img class="photo" src="{{producteur?.photoDevanture}}" alt=""></div>
-  <div class="loc"><p>Actuellement à : {{producteur?.localisationClear}}</p></div>
-  <div class="horaire"><p>Horaire: {{producteur?.horaires}}</p></div>
-  <div class="description">{{producteur?.description}}</div>
-  <div class="btnSection"><button class="btnSection1" [routerLink]="['/menu',{id:producteur!.id,url:producteur!.photoDevanture}]">Voir Produit</button></div>
+  <div ><img class="photo" src="{{producteur?.photoDevanture}}" alt=""></div>
+  <div class="info-card">
+    <div class="loc"><p>Actuellement Ã  : {{producteur?.localisationClear}}</p></div>
+    <hr>
+    <div class="horaire"><p>Horaire: {{producteur?.horaires}}</p></div>
+    <hr>
+    <div class="description">{{producteur?.description}}</div>
+    <br>
+    <div class="btnSection"><button class="btnSection1" [routerLink]="['/menu',{id:producteur!.id,url:producteur!.photoDevanture}]">Voir Produit</button></div>
+  </div>
 </div>

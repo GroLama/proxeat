@@ -1,22 +1,31 @@
 .payment {
     margin-left: auto;
     margin-right: auto;
+    display: block;
+}
+
+.header{
+    margin-top: 6vw;
 }
 
 h1 {
     padding-top: 4%;
     padding-left: 2%;
     color: gray;
-    font-size: 4vw;
+    font-size: 5vw;
     text-align: center;
 }
 
 .card {
 
-    font-size: 3vw;
+    font-size: 4vw;
     margin-left: 5vw;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.total{
+    font-size: 4vw;
 }
 
 p {
@@ -28,8 +37,9 @@ fa-icon {
     margin-left: 15vw;
     position: absolute;
     right: 7vw;
-    font-size: 5vw;
+    font-size: 6vw;
     margin-top: 5vw;
+    cursor: pointer;
 
 }
 
@@ -51,4 +61,71 @@ input[type="submit"] {
     font-weight: 700;
     cursor: pointer;
     outline: none;
+    background-position: center;
+    transition: 0.8s;
+}
+
+.btn-like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+  }
+  
+  
+  .like {
+    margin-left: 1vw;
+  }
+  
+  .like-count {
+    margin-LEFT: 67vw;
+  }
+  .like-btn {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+
+input[type="submit"]:hover{
+    background: #5ec04a radial-gradient(circle, transparent 1%, #5ec04a 1%) center/15000%;
+  }
+
+@media (min-width: 769px) {
+
+    h1 {
+        font-size: 3vw;
+        margin-bottom: 30px;
+    }
+
+    .card {
+
+        font-size: 2vw;
+    }
+
+    fa-icon {
+        font-size: 2vw;
+        margin-top: 1vw;
+    }
+
+    .total{
+        font-size: 2vw;
+    }
+
+    input[type="submit"] {
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    p{
+        margin-top: 20px; ;
+    }
+
+    .header{
+        margin-top: 0vw;
+    }
 }

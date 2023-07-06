@@ -5,19 +5,20 @@
   margin-right: auto;
   border: 5px solid black;
   margin-top: 20vw;
+  border-radius: 3vw;
 }
 h1 {
   padding-top: 4%;
   padding-left: 2%;
   color: gray;
-  font-size: 4vw;
+  font-size: 5vw;
   text-align: center;
   font-weight: bold;
 }
 
 .card{
 
-  font-size: 3vw;
+  font-size: 4vw;
   margin-left: 5vw;
 }
 
@@ -32,6 +33,7 @@ fa-icon {
   right: 7vw;
   font-size:5vw;
   margin-top: 5vw;
+  cursor: pointer;
 
 }
 
@@ -53,11 +55,24 @@ input[type="submit"]{
   font-weight: 700;
   cursor: pointer;
   outline: none;
+  background-position: center;
+  transition: 0.8s;
 }
+
+input[type="submit"]:hover{
+  background: #5ec04a radial-gradient(circle, transparent 1%, #5ec04a 1%) center/15000%;
+}
+
+input[type="submit"]:active {
+  background-color: #5ec04a;
+  background-size: 100%;
+  transition: background 0s;
+}
+
 h2 {
   padding-left: 2%;
   color: gray;
-  font-size: 4vw;
+  font-size: 5vw;
   text-align: center;
   font-weight: bold;
 }
@@ -68,4 +83,56 @@ h2 {
 .prix {
   margin-inline: block;
   margin-left: 15vw;
+}
+
+@media (min-width: 768px) {
+
+  .boulangerie {
+    width: 30%;
+    margin-top: 6vw;
+    border-radius: 1vw;
+  }
+
+  h1{
+    margin-bottom: 30px;
+    font-size: 3vw;
+  }
+
+  .card{
+
+    font-size: 1.5vw;
+    margin-left: 5vw;
+  }
+
+  fa-icon {
+    color: green;
+    margin-left: 15vw;
+    position: absolute;
+    right: 7vw;
+    font-size:2vw;
+    margin-top: 2vw;
+
+  }
+  p {
+    margin-left: 15vw;
+    margin-top: 20px;
+  }
+
+  h2 {
+
+    font-size: 3vw;
+    margin-bottom: 30px;
+  }
+
+  .name2 {
+    font-size: 2vw;
+  }
+
+  input[type="submit"]{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
 }

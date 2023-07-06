@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AuthService } from './auth.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { AuthService } from './auth.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    FormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
