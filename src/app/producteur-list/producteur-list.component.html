@@ -2,12 +2,20 @@
 <div class="header"></div>
 <div class="search-container">
   <input class="search-input" type="text" [(ngModel)]="searchTerm" (input)="onSearch()" (keyup)="onSearch()" placeholder="Rechercher un producteur...">
-
 </div>
-<div class="container" >
-  <div *ngFor="let producteur of (sortedProducteurs$|async)">
-    <app-producteur-card class="card" [producteur]="producteur"></app-producteur-card>
-  </div>
+<div class="container">
+  <ng-container *ngIf="searchTerm.length > 0; else noSearchTerm">
+    <div *ngFor="let producteur of filteredProducteurs">
+      <!-- contenu à afficher quand searchTerm est supérieur à 0 -->
+      <app-producteur-card class="card" [producteur]="producteur"></app-producteur-card>
+    </div>
+  </ng-container>
+  
+  <ng-template #noSearchTerm>
+    <div *ngFor="let producteur of (sortedProducteurs$ | async)">
+      <!-- contenu à afficher quand searchTerm est 0 ou inférieur -->
+      <app-producteur-card class="card" [producteur]="producteur"></app-producteur-card>
+    </div>
+  </ng-template>
 </div>
-
 <app-footer></app-footer>
