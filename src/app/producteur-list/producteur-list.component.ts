@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { DbServiceService } from '../db-service.service';
 import { ProducteurInterface } from '../interfaces/ProducteurInterface';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-producteur-list',
@@ -9,18 +11,32 @@ import { ProducteurInterface } from '../interfaces/ProducteurInterface';
   styleUrls: ['./producteur-list.component.css'],
 })
 export class ProducteurListComponent implements OnInit {
-  producteurList$:Observable<ProducteurInterface[]> = new Observable();
-displayData() {
-  this.dbService.displayProd()
-}
-  
-  constructor(private dbService:DbServiceService) {}
+  sortedProducteurs$: Observable<ProducteurInterface[]> = of([]); // Initialise sortedProducteurs$
+
+  constructor(private dbService: DbServiceService, private firestore: AngularFirestore) {}
 
   ngOnInit(): void {
-    this.dbService.startFetch()
-    this.producteurList$ = this.dbService.producteurEvent
-    this.producteurList$.subscribe(data=>{
+    this.dbService.startFetch();
+    this.sortedProducteurs$ = this.dbService.producteurEvent.pipe(
+      switchMap(producteurs =>
+        from(this.sortProducteursByLikes(producteurs))
+      )
+    );
+  }
 
-    })
+  async sortProducteursByLikes(producteurs: ProducteurInterface[]): Promise<ProducteurInterface[]> {
+    const producteursWithLikes = await Promise.all(
+      producteurs.map(async producteur => {
+        const likes = await this.firestore.collection('like', ref => ref.where('producteurId', '==', producteur.id)).get().toPromise();
+        const likeCount = likes ? likes.size : 0; // Check if likes is not undefined before trying to access size
+        return { ...producteur, likes: likeCount };
+      })
+    );
+    return producteursWithLikes.sort((a, b) => (b.likes || 0) - (a.likes || 0));
+  }
+
+
+  displayData() {
+    this.dbService.displayProd();
   }
 }

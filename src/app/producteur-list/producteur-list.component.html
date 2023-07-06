@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="header"></div>
-<div *ngFor="let producteur of (producteurList$|async)">
+<div *ngFor="let producteur of (sortedProducteurs$|async)">
   <app-producteur-card
   [producteur]="producteur"></app-producteur-card>
 </div>
